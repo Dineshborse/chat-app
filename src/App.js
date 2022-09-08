@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CookiesProvider, useCookies } from "react-cookie";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage/HomePage";
+import Login from "./components/Login/Login";
+import Signup from "./Signup/Signup";
 
 function App() {
+  const [userTokenCookie, setUserTokenCookie, removeUserTokenCookie] = useCookies(["token"]);
+  setUserTokenCookie("token", "test", { path: "/" });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CookiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage userCookie={userTokenCookie}
+            setCookie={setUserTokenCookie} removeCookie={removeUserTokenCookie} />} />
+          <Route path="/login" element={<Login userCookie={userTokenCookie}
+            setCookie={setUserTokenCookie} removeCookie={removeUserTokenCookie} />} />
+          <Route path="/signup" element={<Signup userCookie={userTokenCookie}
+            setCookie={setUserTokenCookie} removeCookie={removeUserTokenCookie} />} />
+        </Routes>
+      </BrowserRouter>
+    </CookiesProvider>
+
+
   );
 }
 

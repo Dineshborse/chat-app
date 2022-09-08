@@ -1,0 +1,13 @@
+@import '../styles/variables';
+
+body{
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

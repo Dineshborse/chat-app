@@ -1,0 +1,83 @@
+@import '../styles/variables';
+
+
+.navmenu {
+    &__items-list {
+        position: absolute;
+        right: 0rem;
+        top: 0rem;
+        background-color: plum;
+        height: 100vh;
+        width: 30vw;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        @include transition-ease;
+        transform: translateY(-100%);
+
+        &.open {
+            transform: translateY(0);
+        }
+
+    }
+
+    &__btn {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        // background-color: red;
+        height: 1.25rem;
+        width: 1.75rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        @include transition-ease;
+
+        // border: 1px solid black;
+        &.open {
+            transform: rotate(540deg);
+        }
+
+        &__burger1 {
+            &.open {
+                position: relative;
+                left: 0px;
+                top: 0.5rem;
+                transform: rotate(45deg);
+            }
+
+            height: 0.25rem;
+            width: 1.75rem;
+            background-color: red;
+
+        }
+
+        &__burger2 {
+            &.open {
+                opacity: 0;
+            }
+
+            height: 0.25rem;
+            width: 1.75rem;
+            background-color: red;
+        }
+
+        &__burger3 {
+            &.open {
+                position: relative;
+                left: 0px;
+                top: -0.5rem;
+                transform: rotate(-45deg);
+            }
+
+            height: 0.25rem;
+            width: 1.75rem;
+            background-color: red;
+        }
+    }
+}
