@@ -1,0 +1,16 @@
+@import '../styles/variables';
+
+
+
+.message-container{
+    max-width: 70%;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 8px 0px 8px;
+}

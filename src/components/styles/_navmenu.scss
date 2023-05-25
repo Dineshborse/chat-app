@@ -1,13 +1,27 @@
 @import '../styles/variables';
 
 
+
+$burger-color: $chatBox-bgcolor;
+
+// @function setBurgerBgColor($color){
+//     $burger-color: $color;
+// }
 .navmenu {
+
+    // position: absolute;
+    // width: fit-content;
+    // height: fit-content;
+    // right: 1rem;
+    // top: 1rem;
+    // align-self: center;
     &__items-list {
         position: absolute;
         right: 0rem;
         top: 0rem;
-        background-color: plum;
-        height: 100vh;
+        background-color: rgba($color: #8f39eb, $alpha: 1.0);
+        ;
+        height: 80vh;
         width: 30vw;
         overflow: hidden;
         display: flex;
@@ -15,22 +29,32 @@
         align-items: center;
         justify-content: flex-start;
         @include transition-ease;
-        transform: translateY(-100%);
+        transform: translateY(-40vh) scaleY(0);
+        box-shadow: 1px 1px 20px black;
+        z-index: 3;
 
         &.open {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
+
+        &__item{
+
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
     }
 
     &__btn {
         position: absolute;
         right: 1rem;
-        top: 1rem;
+        top: 0.5rem;
         // background-color: red;
         height: 1.25rem;
         width: 1.75rem;
-        z-index: 1;
+        z-index: 3;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -40,7 +64,7 @@
 
         // border: 1px solid black;
         &.open {
-            transform: rotate(540deg);
+            transform: rotate(180deg);
         }
 
         &__burger1 {
@@ -53,8 +77,8 @@
 
             height: 0.25rem;
             width: 1.75rem;
-            background-color: red;
-
+            background-color: $burger-color;
+            border-radius: 2px;
         }
 
         &__burger2 {
@@ -64,7 +88,8 @@
 
             height: 0.25rem;
             width: 1.75rem;
-            background-color: red;
+            background-color: $burger-color;
+            border-radius: 2px;
         }
 
         &__burger3 {
@@ -73,11 +98,12 @@
                 left: 0px;
                 top: -0.5rem;
                 transform: rotate(-45deg);
+                
             }
-
+            border-radius: 2px;
             height: 0.25rem;
             width: 1.75rem;
-            background-color: red;
+            background-color: $burger-color;
         }
     }
 }

@@ -1,3 +1,22 @@
+
+$chatBox-bgcolor:#ceb7e7;
+$sidePanel-bgcolor:#b07deb;
+$NavBar-bgcolor:#8421f5;
+$Secondary-color:#ded2eb;
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 @mixin transition-ease {
     transition: all 0.5s ease-in-out;    
+}
+
+@function setTestColor($color){
+    @if (lightness($color) >60%) {
+        @return #000;
+    }
+    @return #fff;
 }

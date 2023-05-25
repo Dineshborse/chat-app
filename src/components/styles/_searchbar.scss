@@ -1,0 +1,33 @@
+@import '../styles/variables';
+
+.SearchBar-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    // background-color: $chatBox-bgcolor;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    &__searchIconbtn{
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__input{
+        outline: none;
+        border: none;
+        background-color: $sidePanel-bgcolor;
+        border-bottom: 1px solid $NavBar-bgcolor;
+        width: 100%;
+        margin-left: 10px;
+        &:focus{
+            background-color: $chatBox-bgcolor;
+        }
+    }
+}

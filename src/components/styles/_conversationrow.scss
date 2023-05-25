@@ -1,0 +1,23 @@
+@import './variables';
+
+.conversationrow-container{
+    width: 99%;
+    height: 50px;
+    // background-color: $chatBox-bgcolor;
+    border-bottom: 1px solid $chatBox-bgcolor;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+    &__sender-image-div{
+        width: 50px;
+        height: 100%;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
